@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+    <title>Background Generator</title> 
+    <link rel="stylesheet" href="style.css">
+</head> 
+
+<body class="change"> 
+	<h1>Background Generator</h1> 
+	
+
+	<input class="color1" type="color" value="#4aff4a" /> 
+    <input class="color2" type="color" value="#ff0000" />
+
+    <h3>Current css bacground</h3> 
+    <p>linear-gradient(to right, rgb(74,255,74), rgb(255,0,0)) repeat scroll 0% 0%;  </p> 
+ 
+	<script> 
+		let css = document.querySelector("p"); 
+		let color1 = document.querySelector(".color1"); 
+		let color2 = document.querySelector(".color2"); 
+		let body = document.querySelector(".change"); 
+		function colorChange() { 
+			body.style.background = 
+				"linear-gradient(to right, "
+					+ color1.value + ", "
+					+ color2.value + ")"; 
+	
+			css.textContent = body.style.background + ";"; 
+		} 
+	
+		color1.addEventListener("input", colorChange); 
+	
+		color2.addEventListener("input", colorChange); 
+	</script> 
+	
+</body> 
+
+</html>
